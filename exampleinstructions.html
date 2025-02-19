@@ -1,41 +1,5 @@
 <h1 id="assignment-tasks">Assignment Tasks</h1>
 <p>${additional_instructions}</p>
-<h1 id="getting-started-with-docker-for-your-assignment">Getting Started with Docker for Your Assignment</h1>
-<p>This assignment will guide you through creating a Docker-based environment to implement and test various GCD algorithms and a fraction sum function. Follow the instructions below to set up Docker on your system and complete the tasks.</p>
-<h2 id="setting-up-docker">Setting Up Docker</h2>
-<h3 id="windows">Windows</h3>
-<ol>
-<li>Download Docker Desktop from <a href="https://www.docker.com/products/docker-desktop/">Docker’s official website</a>.</li>
-<li>Run the installer and follow the prompts.</li>
-<li>After installation, launch Docker Desktop and ensure it is running.</li>
-</ol>
-<h3 id="mac">Mac</h3>
-<ol>
-<li>Open Terminal.</li>
-<li>Install Homebrew if it is not already installed by running the following command:<pre><code class="lang-sh"> /<span class="hljs-keyword">bin/bash </span>-c <span class="hljs-string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span>
-</code></pre>
-</li>
-<li>Run the following command to install Docker using Homebrew:<pre><code class="lang-sh"> <span class="hljs-keyword">brew </span><span class="hljs-keyword">install </span>--cask docker
-</code></pre>
-</li>
-<li>Start Docker from the command line:<pre><code class="lang-sh"> <span class="hljs-keyword">open</span> /Applications/Docker.<span class="hljs-keyword">app</span>
-</code></pre>
-</li>
-<li>Verify Docker installation by running:<pre><code class="lang-sh"> docker <span class="hljs-comment">--version</span>
-</code></pre>
-</li>
-</ol>
-<h3 id="linux">Linux</h3>
-<ol>
-<li>Open a terminal.</li>
-<li>Run the following commands:<pre><code class="lang-sh"> sudo apt-<span class="hljs-built_in">get</span> <span class="hljs-keyword">update</span>
- sudo apt-<span class="hljs-built_in">get</span> install docker.io
-</code></pre>
-</li>
-<li>Verify Docker installation with:<pre><code class="lang-sh"> docker <span class="hljs-comment">--version</span>
-</code></pre>
-</li>
-</ol>
 <h2 id="downloading-unzipping-and-running-the-assignment">Downloading, Unzipping, and Running the Assignment</h2>
 <h3 id="step-1-download-the-assignment-zip-file-from-your-course-portal-">Step 1: Download the assignment ZIP file from your course portal.</h3>
 <h3 id="step-2-unzip-the-file-into-a-directory-of-your-choice-">Step 2: Unzip the file into a directory of your choice.</h3>
@@ -76,5 +40,46 @@
 <pre><code class="lang-sh"> <span class="hljs-keyword">update</span>-docker.<span class="hljs-keyword">sh</span>
 </code></pre>
 <p> You will need to exit, rebuild, and restart your Docker container after running this command.</p>
+</li>
+<li><p><strong>refresh-assignment-files.sh:</strong> This script downloads a fresh copy of the assignment files into your workspace to a directory named ${assignment_short_name}.</p>
+<pre><code class="lang-sh"> refresh-assignment-<span class="hljs-keyword">files</span>.<span class="hljs-keyword">sh</span>
+</code></pre>
+<p> You will need to copy the files you want to replace from the ${assignment_short_name} directory.</p>
+</li>
+</ol>
+<h1 id="getting-started-with-docker-for-your-assignment">Getting Started with Docker for Your Assignment</h1>
+<p>This assignment will guide you through creating a Docker-based environment. Follow the instructions below to set up Docker on your system and complete the tasks.</p>
+<h2 id="setting-up-docker">Setting Up Docker</h2>
+<h3 id="windows">Windows</h3>
+<ol>
+<li>Download Docker Desktop from <a href="https://www.docker.com/products/docker-desktop/">Docker’s official website</a>.</li>
+<li>Run the installer and follow the prompts.</li>
+<li>After installation, launch Docker Desktop and ensure it is running.</li>
+</ol>
+<h3 id="mac">Mac</h3>
+<ol>
+<li>Open Terminal.</li>
+<li>Install Homebrew if it is not already installed by running the following command:<pre><code class="lang-sh"> /<span class="hljs-keyword">bin/bash </span>-c <span class="hljs-string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span>
+</code></pre>
+</li>
+<li>Run the following command to install Docker using Homebrew:<pre><code class="lang-sh"> <span class="hljs-keyword">brew </span><span class="hljs-keyword">install </span>--cask docker
+</code></pre>
+</li>
+<li>Start Docker from the command line:<pre><code class="lang-sh"> <span class="hljs-keyword">open</span> /Applications/Docker.<span class="hljs-keyword">app</span>
+</code></pre>
+</li>
+<li>Verify Docker installation by running:<pre><code class="lang-sh"> docker <span class="hljs-comment">--version</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="linux">Linux</h3>
+<ol>
+<li>Open a terminal.</li>
+<li>Run the following commands:<pre><code class="lang-sh"> sudo apt-<span class="hljs-built_in">get</span> <span class="hljs-keyword">update</span>
+ sudo apt-<span class="hljs-built_in">get</span> install docker.io
+</code></pre>
+</li>
+<li>Verify Docker installation with:<pre><code class="lang-sh"> docker <span class="hljs-comment">--version</span>
+</code></pre>
 </li>
 </ol>

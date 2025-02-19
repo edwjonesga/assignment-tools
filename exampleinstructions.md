@@ -1,46 +1,6 @@
 # Assignment Tasks
 ${additional_instructions}
 
-# Getting Started with Docker for Your Assignment
-This assignment will guide you through creating a Docker-based environment to implement and test various GCD algorithms and a fraction sum function. Follow the instructions below to set up Docker on your system and complete the tasks.
-
-## Setting Up Docker
-### Windows
-1. Download Docker Desktop from [Docker’s official website](https://www.docker.com/products/docker-desktop/).
-2. Run the installer and follow the prompts.
-3. After installation, launch Docker Desktop and ensure it is running.
-
-### Mac
-1. Open Terminal.
-2. Install Homebrew if it is not already installed by running the following command:
-    ```sh
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ```
-3. Run the following command to install Docker using Homebrew:
-    ```sh
-    brew install --cask docker
-    ```
-4. Start Docker from the command line:
-    ```sh
-    open /Applications/Docker.app
-    ```
-5. Verify Docker installation by running:
-    ```sh
-    docker --version
-    ```
-
-### Linux
-1. Open a terminal.
-2. Run the following commands:
-    ```sh
-    sudo apt-get update
-    sudo apt-get install docker.io
-    ```
-3. Verify Docker installation with:
-    ```sh
-    docker --version
-    ```
-
 ## Downloading, Unzipping, and Running the Assignment
 ### Step 1: Download the assignment ZIP file from your course portal.
 ### Step 2: Unzip the file into a directory of your choice.
@@ -93,3 +53,51 @@ After running the Docker container, you will have access to three scripts that a
     update-docker.sh
     ```
     You will need to exit, rebuild, and restart your Docker container after running this command.
+
+5. **refresh-assignment-files.sh:** This script downloads a fresh copy of the assignment files into your workspace to a directory named ${assignment_short_name}.
+    ```sh
+    refresh-assignment-files.sh
+    ```
+    You will need to copy the files you want to replace from the ${assignment_short_name} directory.
+
+
+# Getting Started with Docker for Your Assignment
+This assignment will guide you through creating a Docker-based environment. Follow the instructions below to set up Docker on your system and complete the tasks.
+
+## Setting Up Docker
+### Windows
+1. Download Docker Desktop from [Docker’s official website](https://www.docker.com/products/docker-desktop/).
+2. Run the installer and follow the prompts.
+3. After installation, launch Docker Desktop and ensure it is running.
+
+### Mac
+1. Open Terminal.
+2. Install Homebrew if it is not already installed by running the following command:
+    ```sh
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+3. Run the following command to install Docker using Homebrew:
+    ```sh
+    brew install --cask docker
+    ```
+4. Start Docker from the command line:
+    ```sh
+    open /Applications/Docker.app
+    ```
+5. Verify Docker installation by running:
+    ```sh
+    docker --version
+    ```
+
+### Linux
+1. Open a terminal.
+2. Run the following commands:
+    ```sh
+    sudo apt-get update
+    sudo apt-get install docker.io
+    ```
+3. Verify Docker installation with:
+    ```sh
+    docker --version
+    ```
+
