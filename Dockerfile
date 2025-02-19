@@ -56,7 +56,7 @@ RUN echo '#!/bin/bash' > /bin/prepare_to_submit.sh && \
 # Generate the update-docker.sh script
 RUN echo '#!/bin/bash' > /bin/update-docker.sh && \
     echo 'echo "Downloading new Dockerfile..."' >> /bin/update-docker.sh && \
-    echo 'curl -L -o /workspace/Dockerfile "https://drive.google.com/uc?export=download&id=1ue-IvpaByECuq3GwAzEZdAbYyotYqJjA"' >> /bin/update-docker.sh && \
+    echo 'curl -L -o /workspace/Dockerfile "https://raw.githubusercontent.com/edwjonesga/assignment-tools/refs/heads/main/Dockerfile"' >> /bin/update-docker.sh && \
     echo 'if [ $? -eq 0 ]; then' >> /bin/update-docker.sh && \
     echo '  echo "Dockerfile updated successfully."' >> /bin/update-docker.sh && \
     echo '  echo "Please exit the container, rebuild it with commands from the assignment page."' >> /bin/update-docker.sh && \
