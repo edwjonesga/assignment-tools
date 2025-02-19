@@ -7,8 +7,8 @@ LABEL maintainer="edwjones@ccu.edu"
 # Create necessary directories
 RUN mkdir -p /workspace /bin /opt/junit
 
-# Install required utilities: zip, unzip, wget, curl, and Git
-RUN apt-get update && apt-get install -y zip unzip wget curl git
+# Install required utilities: zip, unzip, wget, curl, git, and jq
+RUN apt-get update && apt-get install -y zip unzip wget curl git jq
 
 # Set the working directory inside the container
 WORKDIR /workspace
