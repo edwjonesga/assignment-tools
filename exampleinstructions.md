@@ -26,6 +26,12 @@ docker run -it --rm -v "$(pwd)":/workspace ${assignment_short_name}
 ```sh
 docker run -it --rm -v "%cd%":/workspace ${assignment_short_name}
 ```
+### Step 6: Get most recent assignment code.
+Once your workspace is running run the following command to get the most recent code from github.
+Select your class then select the current assignment short name: ${assignment_short_name}
+```sh
+refresh-assignment-files.sh
+```
 
 ## Using the Installed Scripts
 After running the Docker container, you will have access to three scripts that are included in the Docker image:
