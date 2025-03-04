@@ -123,6 +123,54 @@ RUN echo '#!/bin/bash' > /bin/refresh-assignment-files.sh && \
     echo 'echo "Operation completed!"' >> /bin/refresh-assignment-files.sh && \
     chmod +x /bin/refresh-assignment-files.sh
 
+    # Generate run-all-tests.sh script
+RUN echo '#!/bin/bash' > /bin/run-all-tests.sh && \
+    echo 'echo "Searching for all directories in the current workspace..."' >> /bin/run-all-tests.sh && \
+    echo 'mapfile -t directories < <(find . -maxdepth 1 -type d -not -name ".*" -not -name "bin" -print0 | xargs -0 -n1)' >> /bin/run-all-tests.sh && \
+    echo '' >> /bin/run-all-tests.sh && \
+    echo 'for dir in "${directories[@]}"; do' >> /bin/run-all-tests.sh && \
+    echo '  if [ -d "$dir" ]; then' >> /bin/run-all-tests.sh && \
+    echo '    echo ""' >> /bin/run-all-tests.sh && \
+    echo '    echo "Processing directory: $dir"' >> /bin/run-all-tests.sh && \
+    echo '    cd "$dir"' >> /bin/run-all-tests.sh && \
+    echo '' >> /bin/run-all-tests.sh && \
+    echo '    # Delete all .class files' >> /bin/run-all-tests.sh && \
+    echo '    echo "Deleting all .class files..."' >> /bin/run-all-tests.sh && \
+    echo '    find . -name "*.class" -type f -delete' >> /bin/run-all-tests.sh && \
+    echo '' >> /bin/run-all-tests.sh && \
+    echo '    # Delete previous test results' >> /bin/run-all-tests.sh && \
+    echo '    echo "Removing previous test results..."' >> /bin/run-all-tests.sh && \
+    echo '    rm -f test-results.txt' >> /bin/run-all-tests.sh && \
+    echo '' >> /bin/run-all-tests.sh && \
+    echo '    # Run compile.sh' >> /bin/run-all-tests.sh && \
+    echo '    echo "Compiling Java files..."' >> /bin/run-all-tests.sh && \
+    echo '    compile.sh' >> /bin/run-all-tests.sh && \
+    echo '' >> /bin/run-all-tests.sh && \
+    echo '    # Run tests' >> /bin/run-all-tests.sh && \
+    echo '    echo "Running tests..."' >> /bin/run-all-tests.sh && \
+    echo '    run-tests.sh' >> /bin/run-all-tests.sh && \
+    echo '' >> /bin/run-all-tests.sh && \
+    echo '    # Print test results' >> /bin/run-all-tests.sh && \
+    echo '    echo "Displaying test results for: $dir"' >> /bin/run-all-tests.sh && \
+    echo '    if [ -f test-results.txt ]; then' >> /bin/run-all-tests.sh && \
+    echo '      cat test-results.txt' >> /bin/run-all-tests.sh && \
+    echo '    else' >> /bin/run-all-tests.sh && \
+    echo '      echo "No test results found."' >> /bin/run-all-tests.sh && \
+    echo '    fi' >> /bin/run-all-tests.sh && \
+    echo '' >> /bin/run-all-tests.sh && \
+    echo '    # Pause and wait for input before proceeding' >> /bin/run-all-tests.sh && \
+    echo '    echo ""' >> /bin/run-all-tests.sh && \
+    echo '    echo "Press Enter to continue to the next directory..."' >> /bin/run-all-tests.sh && \
+    echo '    read -r' >> /bin/run-all-tests.sh && \
+    echo '' >> /bin/run-all-tests.sh && \
+    echo '    # Move back to the original directory' >> /bin/run-all-tests.sh && \
+    echo '    cd ..' >> /bin/run-all-tests.sh && \
+    echo '  fi' >> /bin/run-all-tests.sh && \
+    echo 'done' >> /bin/run-all-tests.sh && \
+    echo '' >> /bin/run-all-tests.sh && \
+    echo 'echo "All tests completed."' >> /bin/run-all-tests.sh && \
+    chmod +x /bin/run-all-tests.sh
+
 # Add bin directory to PATH
 ENV PATH="/bin:$PATH"
 
