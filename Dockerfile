@@ -23,8 +23,8 @@ ENV CLASSPATH="/opt/junit/junit-platform-console-standalone.jar:."
 
 # Generate the compile.sh script to compile everything
 RUN echo '#!/bin/bash' > /bin/compile.sh && \
-    echo 'echo "Compiling all Java files under src/ and its subdirectories..."' >> /bin/compile.sh && \
-    echo 'find . -name "*.java" > sources.txt' >> /bin/compile.sh && \
+    echo 'echo "Compiling all Java files under ./src, ./test and their subdirectories..."' >> /bin/compile.sh && \
+    echo 'find ./src ./test -name "*.java" > sources.txt' >> /bin/compile.sh && \
     echo 'javac -d . @sources.txt' >> /bin/compile.sh && \
     echo 'if [ $? -eq 0 ]; then' >> /bin/compile.sh && \
     echo '  echo "Compilation complete."' >> /bin/compile.sh && \
