@@ -1,5 +1,6 @@
 # Use the official OpenJDK image as the base image
-FROM openjdk:11
+FROM openjdk:16-jdk-buster
+
 
 # Set the maintainer label
 LABEL maintainer="edwjones@ccu.edu"
