@@ -1,5 +1,9 @@
-# Assignment Tasks
 ${additional_instructions}
+
+# ⚠️ Important Grading Rules ⚠️
+1. Code that does not compile will recieve an automatic 50% penalty or more depending on if I want to go fix your code to see why it isn't working. Happy to help during office hours tho :-)
+2. Gratuitous modification of test code to make your code pass if it doesn't will also recieve a significant up to 50% penalty (at my discression). Please check with me before modifying tests.
+3. With the exception of cases where I'm in a good mood :-) you can expect to receive a 0 for any assignment that is not turned in before the deadline if arrangements for a late submission are not made before hand.
 
 ## Downloading, Unzipping, and Running the Assignment
 ### Step 1: Download the assignment ZIP file from your course portal.
