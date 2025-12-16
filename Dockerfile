@@ -1,5 +1,5 @@
 # Use the official OpenJDK image as the base image
-FROM openjdk:16-jdk-buster
+FROM eclipse-temurin:21-jdk
 
 
 # Set the maintainer label
